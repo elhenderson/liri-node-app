@@ -42,10 +42,22 @@ if (process.argv[2] === "concert-this") {
 if (process.argv[2] === "spotify-this-song") {
   spotify.search({
     type: "track",
-    query: "All the Small Things"
-  }).then(function (response) {
-    console.log(response.tracks.items[0].album.name);
-    console.log(response.tracks.items[0].album.artists.name);
-    console.log(response.tracks.items[0].name);
+    query: process.argv.slice(3)
+  }, function(err, response) {
+    if (err) {
+      console.log(`\nSorry, we couldn't find that song. How about this one?\n`);
+      console.log("Ace of Base");
+      console.log("Song name: The Sign")
+      console.log("Song Preview: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=9c033529f22a46f094b81858a68abae1")
+      console.log(`Album: Happy Nation\n`);
+    } else {
+      for (i=0; i<10; i++) {
+        let song = response.tracks.items[i];
+        console.log(`\nArtist(s): ${song.album.artists[0].name}`);
+        console.log(`Song preview: ${song.preview_url}`);
+        console.log(`Song name: ${song.name}`);
+        console.log(`Album: ${song.album.name}\n`);
+      }
+    }
   })
 }
