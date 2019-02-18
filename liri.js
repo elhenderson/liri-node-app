@@ -1,6 +1,6 @@
 require("dotenv").config();
 var Spotify = require("node-spotify-api");
-
+var inquirer = require("inquirer")
 
 var axios = require("axios");
 
@@ -39,6 +39,7 @@ if (process.argv[2] === "concert-this") {
   })
 }
 
+//Spotify
 if (process.argv[2] === "spotify-this-song") {
   spotify.search({
     type: "track",
@@ -61,3 +62,36 @@ if (process.argv[2] === "spotify-this-song") {
     }
   })
 }
+
+//OMDB
+if (process.argv[2] === "movie-this") {
+  let movie = process.argv.slice(3).join("+");
+  let movieURL = `http://www.omdbapi.com/?t=${movie}&apikey=trilogy`
+  if (!process.argv[3]) {
+    axios.get(`http://www.omdbapi.com/?t=Mr.+Nobody&apikey=trilogy`).then(function (response) {        
+        console.log(`\nLooks like you haven't entered anything. If you haven't, you should check out this movie!`);
+        var movieInfo = response.data
+        console.log(`\nTitle: ${movieInfo.Title}`);
+        console.log(`Year: ${movieInfo.Year}`);
+        console.log(`IMDB Rating: ${movieInfo.imdbRating}`);
+        console.log(`Rotten Tomatoes Rating: ${movieInfo.Ratings[1].Value}`);
+        console.log(`Country: ${movieInfo.Country}`);
+        console.log(`Language: ${movieInfo.Language}`);
+        console.log(`Plot: ${movieInfo.Plot}`);
+        console.log(`Actors: ${movieInfo.Actors}\n`)
+    }) 
+  } else {
+    axios.get(movieURL).then(function (response) {
+      var movieInfo = response.data
+      console.log(`\nTitle: ${movieInfo.Title}`);
+      console.log(`Year: ${movieInfo.Year}`);
+      console.log(`IMDB Rating: ${movieInfo.imdbRating}`);
+      console.log(`Rotten Tomatoes Rating: ${movieInfo.Ratings[1].Value}`);
+      console.log(`Country: ${movieInfo.Country}`);
+      console.log(`Language: ${movieInfo.Language}`);
+      console.log(`Plot: ${movieInfo.Plot}`);
+      console.log(`Actors: ${movieInfo.Actors}\n`)
+    })
+  }
+}
+
