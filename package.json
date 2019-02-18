@@ -1,0 +1,31 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "liri.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elhenderson/liri-node-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elhenderson/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/elhenderson/liri-node-app#readme",
+  "dependencies": {
+    "@babel/preset-env": "^7.3.1",
+    "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
+    "node-spotify-api": "^1.0.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3"
+  }
+}
