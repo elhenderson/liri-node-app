@@ -10,39 +10,43 @@ var spotify = new Spotify(keys.spotify);
 //Bands in Town
 function concertSearch(randomTxt) {
   var queryParm;
+  //Using 'do-what-it-says'
   if (randomTxt) {
     queryParm = randomTxt;
+  //Using 'concert-this'
   } else {
     queryParm = process.argv.slice(3).join("")
   }
   var bandsInTownUrl = `https://rest.bandsintown.com/artists/${queryParm}/events?app_id=codingbootcamp`;
   axios.get(bandsInTownUrl).then(function (response) {
-    
+    //Separator for better readability
     fs.appendFile("log.txt", `\n-------------\nConcert search\n-------------`, function(err) {
       if (err) throw err;
     })
-    for (let i = 0; i < 10; i++) {
-    let dateTime = response.data[i].datetime
-    let venue = response.data[i].venue
+    //Lists 5 upcoming shows
+    for (let i = 0; i < 5; i++) {
+      let dateTime = response.data[i].datetime
+      let venue = response.data[i].venue
+        //displays name of the venue
+        var containInfo = `\n${venue.name}`;
 
-      var containInfo = `\n${venue.name}`;
+        //checks for region
+        if (venue.region) {
+          containInfo += `\n${venue.city}, ${venue.region}, ${venue.country}`;
 
-      //checks for region
-      if (venue.region) {
-        containInfo += `\n${venue.city}, ${venue.region}, ${venue.country}`;
+        //if no region, display only city and country
+        } else {
+          containInfo += `\n${venue.city}, ${venue.country}`;
+        }
 
-      //if no region, display only city and country
-      } else {
-        containInfo += `\n${venue.city}, ${venue.country}`;
-      }
-
-      //displays date & time
-      containInfo += `\n${dateTime.slice(5, -9)}-${dateTime.slice(0, -15)} ${dateTime.slice(11, -3)} \n`
-
-      console.log(containInfo);
-      fs.appendFile("log.txt", containInfo, function(err) {
-        if (err) throw err;
-      })
+        //displays date & time
+        containInfo += `\n${dateTime.slice(5, -9)}-${dateTime.slice(0, -15)} ${dateTime.slice(11, -3)} \n`
+        //Prints info to console
+        console.log(containInfo);
+        //appends info to log.txt
+        fs.appendFile("log.txt", containInfo, function(err) {
+          if (err) throw err;
+        })
     }
     console.log(`This info has been added to log.txt!\n`);
   })
@@ -77,8 +81,8 @@ function spotifySearch(randomTxt) {
       fs.appendFile("log.txt", `\n-------------\nSpotify search\n-------------`, function(err) {
         if (err) throw err;
       })
-      //lists out info for 10 songs
-      for (i=0; i<10; i++) {
+      //lists out info for 5 songs
+      for (i=0; i<5; i++) {
         let song = response.tracks.items[i];
         var containInfo = `\nArtist(s): ${song.album.artists[0].name}\nSong preview: ${song.preview_url}\nSong name: ${song.name}\nAlbum: ${song.album.name}\n`;
         console.log(containInfo);
