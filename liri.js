@@ -23,8 +23,8 @@ function concertSearch(randomTxt) {
     fs.appendFile("log.txt", `\n-------------\nConcert search\n-------------`, function(err) {
       if (err) throw err;
     })
-    //Lists 5 upcoming shows
-    for (let i = 0; i < 5; i++) {
+    //Lists 3 upcoming shows
+    for (let i = 0; i < 3; i++) {
       let dateTime = response.data[i].datetime
       let venue = response.data[i].venue
         //displays name of the venue
@@ -81,8 +81,8 @@ function spotifySearch(randomTxt) {
       fs.appendFile("log.txt", `\n-------------\nSpotify search\n-------------`, function(err) {
         if (err) throw err;
       })
-      //lists out info for 5 songs
-      for (i=0; i<5; i++) {
+      //lists out info for 3 songs
+      for (i=0; i<3; i++) {
         let song = response.tracks.items[i];
         var containInfo = `\nArtist(s): ${song.album.artists[0].name}\nSong preview: ${song.preview_url}\nSong name: ${song.name}\nAlbum: ${song.album.name}\n`;
         console.log(containInfo);

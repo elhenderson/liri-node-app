@@ -1,4 +1,3 @@
-
 -------------
 Concert search
 -------------
@@ -14,30 +13,50 @@ Brooklyn Bowl
 Las Vegas, NV, United States
 04-02-2019 19:00 
 
-The Van Buren
-Phoenix, AZ, United States
-04-03-2019 19:00 
+-------------
+Spotify search
+-------------
+Artist(s): Periphery
+Song preview: https://p.scdn.co/mp3-preview/33a2a6800d53a07fbfedcefba026f3f8bcce6734?cid=9c033529f22a46f094b81858a68abae1
+Song name: Blood Eagle
+Album: Blood Eagle
 
-South Side Music Hall
-Dallas, TX, United States
-04-05-2019 19:00 
+Artist(s): Anthrax
+Song preview: https://p.scdn.co/mp3-preview/bb3f266ec58e290fd862e60ae129b82a87293185?cid=9c033529f22a46f094b81858a68abae1
+Song name: Blood Eagle Wings
+Album: For All Kings
 
-Vibes Event Center
-San Antonio, TX, United States
-04-06-2019 19:00 
+Artist(s): Amon Amarth
+Song preview: https://p.scdn.co/mp3-preview/8ae33cb466e71c77ebb47d56de7ad50659ee1f1b?cid=9c033529f22a46f094b81858a68abae1
+Song name: Blood Eagle
+Album: Deceiver of the Gods
 
-Warehouse Live
-Houston, TX, United States
-04-07-2019 19:00 
+-------------
+Movie search
+-------------
+Title: Ex Machina
+Year: 2014
+IMDB Rating: 7.7
+Rotten Tomatoes Rating: 92%
+Country: UK
+Language: English
+Plot: A young programmer is selected to participate in a ground-breaking experiment in synthetic intelligence by evaluating the human qualities of a breath-taking humanoid A.I.
+Actors: Domhnall Gleeson, Alicia Vikander, Oscar Isaac, Sonoya Mizuno
 
-Revolution Live
-Fort Lauderdale, FL, United States
-04-09-2019 19:00 
+-------------
+Spotify search
+-------------
+Artist(s): Global Dan
+Song preview: https://p.scdn.co/mp3-preview/9c3b2454d09cf668eac6fca31b0a6d8a2a9c2d07?cid=9c033529f22a46f094b81858a68abae1
+Song name: Off-White (feat. Mongo)
+Album: Global Warming
 
-The Fillmore Silver Spring
-Silver Spring, MD, United States
-04-11-2019 19:00 
+Artist(s): Pitbull
+Song preview: https://p.scdn.co/mp3-preview/68f4c7804fff74deba04b861d13d2743101233d5?cid=9c033529f22a46f094b81858a68abae1
+Song name: Feel This Moment
+Album: Global Warming: Meltdown (Deluxe Version)
 
-PlayStation Theater
-New York, NY, United States
-04-12-2019 19:00 
+Artist(s): Pitbull
+Song preview: https://p.scdn.co/mp3-preview/d26c8392936843a07bb162853093de5bf2eb0011?cid=9c033529f22a46f094b81858a68abae1
+Song name: Timber
+Album: Global Warming: Meltdown (Deluxe Version)
