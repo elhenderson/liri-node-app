@@ -1,0 +1,53 @@
+
+-------------
+Spotify search
+-------------
+Artist(s): Periphery
+Song preview: https://p.scdn.co/mp3-preview/33a2a6800d53a07fbfedcefba026f3f8bcce6734?cid=9c033529f22a46f094b81858a68abae1
+Song name: Blood Eagle
+Album: Blood Eagle
+
+Artist(s): Amon Amarth
+Song preview: https://p.scdn.co/mp3-preview/8ae33cb466e71c77ebb47d56de7ad50659ee1f1b?cid=9c033529f22a46f094b81858a68abae1
+Song name: Blood Eagle
+Album: Deceiver of the Gods
+
+Artist(s): 生 Conform 死
+Song preview: https://p.scdn.co/mp3-preview/5a5e43c96f5fc221fd53077612dffc1d63d32de0?cid=9c033529f22a46f094b81858a68abae1
+Song name: Blood Eagle
+Album: Blood Eagle
+
+Artist(s): Trevor Morris
+Song preview: https://p.scdn.co/mp3-preview/d848f7068174bc5dd8755da2833b2b4ce0c7c2af?cid=9c033529f22a46f094b81858a68abae1
+Song name: Ragnar Describes the Blood Eagle
+Album: The Vikings II (Music from the TV Series)
+
+Artist(s): Anthrax
+Song preview: https://p.scdn.co/mp3-preview/6e87390863e97f7c5f0071e1e623d3b2f2f23a1e?cid=9c033529f22a46f094b81858a68abae1
+Song name: Blood Eagle Wings
+Album: For All Kings (Deluxe)
+
+Artist(s): Conan
+Song preview: https://p.scdn.co/mp3-preview/4cc1490398648cdc04d19a291c9f512a0b415aab?cid=9c033529f22a46f094b81858a68abae1
+Song name: Gravity Chasm
+Album: Blood Eagle
+
+Artist(s): Amon Amarth
+Song preview: https://p.scdn.co/mp3-preview/8ae33cb466e71c77ebb47d56de7ad50659ee1f1b?cid=9c033529f22a46f094b81858a68abae1
+Song name: Blood Eagle
+Album: Deceiver of the Gods
+
+Artist(s): 生 Conform 死
+Song preview: https://p.scdn.co/mp3-preview/4a792a7a2c115248bee1ca6b96739c2236417b28?cid=9c033529f22a46f094b81858a68abae1
+Song name: Blood Eagle
+Album: Circa '94
+
+Artist(s): Conan
+Song preview: https://p.scdn.co/mp3-preview/3db3800ef77fb9a7b60df7651dd744f294b9f6f9?cid=9c033529f22a46f094b81858a68abae1
+Song name: Crown of Talons
+Album: Blood Eagle
+
+Artist(s): Anthrax
+Song preview: https://p.scdn.co/mp3-preview/bb3f266ec58e290fd862e60ae129b82a87293185?cid=9c033529f22a46f094b81858a68abae1
+Song name: Blood Eagle Wings
+Album: For All Kings
