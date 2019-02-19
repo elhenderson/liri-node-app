@@ -23,20 +23,26 @@ function concertSearch(randomTxt) {
     let dateTime = response.data[i].datetime
     let venue = response.data[i].venue
 
-      console.log(`\n${venue.name}`);
+      var containInfo = `\n${venue.name}`;
 
       //checks for region
       if (venue.region) {
-        console.log(`${venue.city}, ${venue.region}, ${venue.country}`);
+        containInfo += `\n${venue.city}, ${venue.region}, ${venue.country}`;
 
       //if no region, display only city and country
       } else {
-        console.log(`${venue.city}, ${venue.country}`);
+        containInfo += `\n${venue.city}, ${venue.country}`;
       }
 
       //displays date & time
-      console.log(`${dateTime.slice(5, -9)}-${dateTime.slice(0, -15)} ${dateTime.slice(11, -3)} \n`)
+      containInfo += `\n${dateTime.slice(5, -9)}-${dateTime.slice(0, -15)} ${dateTime.slice(11, -3)} \n`
+
+      console.log(containInfo);
+      fs.appendFile("log.txt", containInfo, function(err) {
+        if (err) throw err;
+      })
     }
+    console.log(`This info has been added to log.txt!\n`);
   })
 }
 
@@ -54,19 +60,22 @@ function spotifySearch(randomTxt) {
     query: queryParm
   }, function(err, response) {
     if (err) {
-      console.log(`\nSorry, we couldn't find that song. How about this one?\n`);
-      console.log("Ace of Base");
-      console.log("Song name: The Sign")
-      console.log("Song Preview: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=9c033529f22a46f094b81858a68abae1")
-      console.log(`Album: Happy Nation\n`);
+      var containInfo = `\nSorry, we couldn't find that song. How about this one?\n\nAce of Base\nSong name: The Sign\nSong Preview: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=9c033529f22a46f094b81858a68abae1\nAlbum: Happy Nation\n`;
+      console.log(containInfo);
+      fs.appendFile("log.txt", containInfo, function(err) {
+        if (err) throw err;
+        console.log(`This info has been added to log.txt!\n`);
+      })
     } else {
       for (i=0; i<10; i++) {
         let song = response.tracks.items[i];
-        console.log(`\nArtist(s): ${song.album.artists[0].name}`);
-        console.log(`Song preview: ${song.preview_url}`);
-        console.log(`Song name: ${song.name}`);
-        console.log(`Album: ${song.album.name}\n`);
+        var containInfo = `\nArtist(s): ${song.album.artists[0].name}\nSong preview: ${song.preview_url}\nSong name: ${song.name}\nAlbum: ${song.album.name}\n`;
+        console.log(containInfo);
+        fs.appendFile("log.txt", containInfo, function(err) {
+          if (err) throw err;
+        })
       }
+      console.log(`This info has been added to log.txt!\n`);
     }
   })
 }
@@ -78,33 +87,29 @@ function movieSearch(randomTxt) {
   if (randomTxt) {
     queryParm = randomTxt;
   } else {
-    queryParm =process.argv.slice(3).join("+");
+    queryParm = process.argv.slice(3).join("+");
   }
   let movieURL = `http://www.omdbapi.com/?t=${queryParm}&apikey=trilogy`
-  if (!process.argv[3]) {
+  if (!queryParm) {
     axios.get(`http://www.omdbapi.com/?t=Mr.+Nobody&apikey=trilogy`).then(function (response) {        
         console.log(`\nLooks like you haven't entered anything. If you haven't, you should check out this movie!`);
         var movieInfo = response.data
-        console.log(`\nTitle: ${movieInfo.Title}`);
-        console.log(`Year: ${movieInfo.Year}`);
-        console.log(`IMDB Rating: ${movieInfo.imdbRating}`);
-        console.log(`Rotten Tomatoes Rating: ${movieInfo.Ratings[1].Value}`);
-        console.log(`Country: ${movieInfo.Country}`);
-        console.log(`Language: ${movieInfo.Language}`);
-        console.log(`Plot: ${movieInfo.Plot}`);
-        console.log(`Actors: ${movieInfo.Actors}\n`)
+        var containInfo = `\nTitle: ${movieInfo.Title}\nYear: ${movieInfo.Year}\nIMDB Rating: ${movieInfo.imdbRating}\nRotten Tomatoes Rating: ${movieInfo.Ratings[1].Value}\nCountry: ${movieInfo.Country}\nLanguage: ${movieInfo.Language}\nPlot: ${movieInfo.Plot}\nActors: ${movieInfo.Actors}\n`;
+        console.log(containInfo);
+        fs.appendFile("log.txt", containInfo, function(err) {
+          if (err) throw err;
+          console.log(`This info has been added to log.txt!\n`);
+        })
     }) 
   } else {
     axios.get(movieURL).then(function (response) {
       var movieInfo = response.data
-      console.log(`\nTitle: ${movieInfo.Title}`);
-      console.log(`Year: ${movieInfo.Year}`);
-      console.log(`IMDB Rating: ${movieInfo.imdbRating}`);
-      console.log(`Rotten Tomatoes Rating: ${movieInfo.Ratings[1].Value}`);
-      console.log(`Country: ${movieInfo.Country}`);
-      console.log(`Language: ${movieInfo.Language}`);
-      console.log(`Plot: ${movieInfo.Plot}`);
-      console.log(`Actors: ${movieInfo.Actors}\n`)
+      var containInfo = `\nTitle: ${movieInfo.Title}\nYear: ${movieInfo.Year}\nIMDB Rating: ${movieInfo.imdbRating}\nRotten Tomatoes Rating: ${movieInfo.Ratings[1].Value}\nCountry: ${movieInfo.Country}\nLanguage: ${movieInfo.Language}\nPlot: ${movieInfo.Plot}\nActors: ${movieInfo.Actors}\n`
+      console.log(containInfo);
+      fs.appendFile("log.txt", containInfo, function(err) {
+        if (err) throw err;
+        console.log(`This info has been added to log.txt!\n`);
+      })
     })
   }
 }
@@ -117,7 +122,7 @@ if (process.argv[2] === "do-what-it-says") {
       console.log(err);
     } else {
       var splitText = data.split(",");
-      console.log(splitText[0])
+      console.log(splitText[1])
       if (splitText[0] === "spotify-this-song") {
         spotifySearch(splitText[1]);
       } else if (splitText[0] === "concert-this") {
@@ -130,14 +135,14 @@ if (process.argv[2] === "do-what-it-says") {
 }
 
 
+//calls
 if (process.argv[2] === "movie-this") {
   movieSearch();
 }
-
 if (process.argv[2] === "spotify-this-song") {
   spotifySearch();
 };
-
 if (process.argv[2] === "concert-this") { 
   concertSearch();
 }
+
